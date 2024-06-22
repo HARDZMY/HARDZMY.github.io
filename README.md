@@ -1,2 +1,2 @@
 # HARDZMY.github.io
-Hi
+This page is for learning purpose only.
