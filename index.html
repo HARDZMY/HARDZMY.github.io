@@ -6,6 +6,7 @@
     <title>HARDZMY</title>
 
     <style>
+      /* Body Format */
       body {
         background-color: #000000;
         color: #fff;
@@ -19,27 +20,42 @@
     </style>
 
     <style>
+      /* Width Spacing */
       .centered-div {
           margin-left: 10%;
           margin-right: 10%;
+      }
+
+      /* Moving Image */
+      .rounded-image {
+          width: 180px;
+          height: 180px;
+          transition: transform 0.3s ease;
+      }
+
+      .rounded-image:hover {
+          transform: translateX(20px);
       }
     </style>
   </head>
   <body>
     <div class="centered-div">
       <h3>Persona | ハズミ ハシム.</h3>
-      <img src="https://HARDZMY.github.io/Image.png" alt="test image" style="width: 180px; height: 180px;">
+      <div class="image-container">
+        <img src="https://HARDZMY.github.io/Image.png" alt="test image" class="rounded-image">
+      </div>
+      <!-- <img src="https://HARDZMY.github.io/Image.png" alt="test image" style="width: 180px; height: 180px;"> -->
       <br>
       <div>
         <p>Welcome to this website! Your presence here is greatly appreciated, my name is Hazmi Hashim
           and I would like to thank you very much for taking the time to visit. I really appreciate 
           your support and interest!
-        </p>
+        </p><br>
         <h3>console.log("Programming World!");</h3>
-        <p>Working as a Systems Analyst at Sony, experienced in C#, .NET, Python, 
+        <p>Working as a Systems Analyst (Full-Stack Developer) at Sony, experienced in C#, .NET, Python, 
           JavaScript and SQL. My expertise includes Application & Web Development, 
           Data Management, SRS Documentation, and more.</p>
-      </div>
+      </div><br>
     </div>
     <div>
       <p id="currentYear"></p>
