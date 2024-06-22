@@ -10,7 +10,7 @@
       color: #fff;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
       text-align: center;
       width: 100%;
     }
@@ -21,11 +21,35 @@
       position: absolute;
       bottom: 0;
       width: 100%;
+      /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     }
   </style>
 </head>
 <body>
-  <p>Hazmi Hashim<br>For learning purpose only.</p>
+  <h4>Persona | ハズミ ハシム.</h4>
+  <div class="profile-container">
+    <img src="" alt="Image" class="rounded-image"><br>
+    <div class="profile-content">
+        <p>This website, a labor of love meticulously crafted by the dedicated hands of Hazmi Hashim, is a
+            testament to passion and creativity. Primarily designed to facilitate study pursuits, this digital
+            sanctuary welcomes you with open arms. Your presence here is deeply cherished, and we extend our
+            heartfelt gratitude for taking the time to visit. Thank you for gracing us with your presence, and
+            we genuinely appreciate your support and interest!
+        </p>
+        <br>
+        <h5>console.log("Programming World!");</h5>
+        <br>
+        <div class="profile-container">
+            <div class="profile-content">
+                <p>Experience in PHP, JavaScript, Python, and SQL. My expertise includes web development and database
+                    management. I enjoy building interactive websites and applications using PHP and JavaScript. I also
+                    have experience in data analysis with Python and efficient database management using SQL. Hope I
+                    can create something great more in the future!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
   <footer>
     <p id="currentYear"></p>
     <p>. All rights reserved.</p>
@@ -33,7 +57,7 @@
 
   <script>
     var currentYear = new Date().getFullYear();
-    document.getElementById("CurrentYear").textContent = currentYear;
+    document.getElementById("currentYear").textContent = currentYear;
   </script>
 </body>
 </html>
