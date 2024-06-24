@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HARDZMY</title>
@@ -17,13 +19,11 @@
         width: 100%;
         font-size: 14px;
       }
-
       /* Width Spacing */
       .centered-div {
           margin-left: 10%;
           margin-right: 10%;
       }
-
       /* Moving Image */
       .rounded-image {
           width: 180px;
@@ -41,15 +41,18 @@
           }
       }
     </style>
+
   </head>
+  
   <body>
     <div class="centered-div">
+      
       <h3>Persona | ハズミ ハシム.</h3>
       <div class="image-container">
         <img src="https://HARDZMY.github.io/Image.png" alt="test image" class="rounded-image">
       </div>
-      <!-- <img src="https://HARDZMY.github.io/Image.png" alt="test image" style="width: 180px; height: 180px;"> -->
       <br>
+
       <div>
         <p>Welcome to this website! Your presence here is greatly appreciated, my name is Hazmi Hashim
           and I would like to thank you very much for taking the time to visit. I really appreciate 
@@ -59,15 +62,21 @@
         <p>Working as a Systems Analyst (Full-Stack Developer) at Sony, experienced in C#, .NET, Python, 
           JavaScript and SQL. My expertise includes Web & Application Development, 
           Data Management, SRS Documentation, and more.</p>
-      </div><br>
+      </div>
+      <br>
+
     </div>
+
     <div>
       <p id="currentYear"></p>
     </div>    
+
     <script>
       var currentYear = new Date().getFullYear();
       var yearText = currentYear + " | All rights reserved | HARDZMY";
       document.getElementById("currentYear").textContent = yearText;
     </script>
+
   </body>
+  
 </html>
