@@ -205,8 +205,8 @@ nav ul li a:hover {
 }
 
 section {
-    padding: 150px 20px;
-    min-height: 120vh;
+    padding: 80px 20px;
+    /* min-height: 120vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
