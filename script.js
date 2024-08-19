@@ -15,12 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            const id = entry.target.getAttribute('id');
-            const link = document.querySelector(nav ul li a[href="#${id}"]);
-
             if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                const activeLink = document.querySelector(`nav ul li a[href="#${id}"]`);
+
                 navLinks.forEach(link => link.classList.remove('active'));
-                link.classList.add('active');
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
             }
         });
     }, { threshold: 0.5 });
