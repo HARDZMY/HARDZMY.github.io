@@ -75,73 +75,73 @@ body {
 
 @keyframes squareMove {
     0% {
-        transform: translate(-100%, -100%); /* Top-left corner */
+        transform: translate(-100%, -100%);
     }
     25% {
-        transform: translate(100%, -100%); /* Top-right corner */
+        transform: translate(100%, -100%);
     }
     50% {
-        transform: translate(100%, 100%); /* Bottom-right corner */
+        transform: translate(100%, 100%);
     }
     75% {
-        transform: translate(-100%, 100%); /* Bottom-left corner */
+        transform: translate(-100%, 100%);
     }
     100% {
-        transform: translate(-100%, -100%); /* Top-left corner */
+        transform: translate(-100%, -100%);
     }
 }
 
 @keyframes circleMove {
     0% {
-        transform: translate(-100%, 0%); /* Left edge */
+        transform: translate(-100%, 0%);
     }
     25% {
-        transform: translate(0%, -100%); /* Top edge */
+        transform: translate(0%, -100%);
     }
     50% {
-        transform: translate(100%, 0%); /* Right edge */
+        transform: translate(100%, 0%);
     }
     75% {
-        transform: translate(0%, 100%); /* Bottom edge */
+        transform: translate(0%, 100%);
     }
     100% {
-        transform: translate(-100%, 0%); /* Left edge */
+        transform: translate(-100%, 0%);
     }
 }
 
 @keyframes triangleMove {
     0% {
-        transform: translate(0%, -100%); /* Top edge */
+        transform: translate(0%, -100%);
     }
     25% {
-        transform: translate(100%, 0%); /* Right edge */
+        transform: translate(100%, 0%);
     }
     50% {
-        transform: translate(0%, 100%); /* Bottom edge */
+        transform: translate(0%, 100%);
     }
     75% {
-        transform: translate(-100%, 0%); /* Left edge */
+        transform: translate(-100%, 0%);
     }
     100% {
-        transform: translate(0%, -100%); /* Top edge */
+        transform: translate(0%, -100%);
     }
 }
 
 @keyframes xMove {
     0% {
-        transform: translate(-100%, -100%); /* Top-left corner */
+        transform: translate(-100%, -100%);
     }
     25% {
-        transform: translate(100%, -100%); /* Top-right corner */
+        transform: translate(100%, -100%);
     }
     50% {
-        transform: translate(100%, 100%); /* Bottom-right corner */
+        transform: translate(100%, 100%);
     }
     75% {
-        transform: translate(-100%, 100%); /* Bottom-left corner */
+        transform: translate(-100%, 100%);
     }
     100% {
-        transform: translate(-100%, -100%); /* Top-left corner */
+        transform: translate(-100%, -100%);
     }
 }
 
