@@ -17,10 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
-                const activeLink = document.querySelector(`nav ul li a[href="#${id}"]`);
+                
+                // Remove 'active' class from all links
+                navLinks.forEach(link => link.classList.remove('active'));
 
-                // Add active class based on scrolling
-                if (activeLink && !activeLink.classList.contains('clicked')) {
+                // Add 'active' class to the link corresponding to the intersecting section
+                const activeLink = document.querySelector(`nav ul li a[href="#${id}"]`);
+                if (activeLink) {
                     activeLink.classList.add('active');
                 }
             }
@@ -34,7 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
-            
+
+            // Remove 'clicked' class from all links
+            navLinks.forEach(link => link.classList.remove('clicked'));
+
+            // Add 'clicked' and 'active' class to the clicked link
             link.classList.add('clicked');
             link.classList.add('active');
 
