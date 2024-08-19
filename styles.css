@@ -75,50 +75,80 @@ body {
 
 @keyframes squareMove {
     0% {
-        transform: translate(-50%, -50%);
+        transform: translate(-100%, -100%); /* Top-left corner */
+    }
+    25% {
+        transform: translate(100%, -100%); /* Top-right corner */
     }
     50% {
-        transform: translate(50%, 50%);
+        transform: translate(100%, 100%); /* Bottom-right corner */
+    }
+    75% {
+        transform: translate(-100%, 100%); /* Bottom-left corner */
     }
     100% {
-        transform: translate(-50%, -50%);
+        transform: translate(-100%, -100%); /* Top-left corner */
     }
 }
 
 @keyframes circleMove {
     0% {
-        transform: translate(-50%, -50%);
+        transform: translate(-100%, 0%); /* Left edge */
+    }
+    25% {
+        transform: translate(0%, -100%); /* Top edge */
     }
     50% {
-        transform: translate(100%, 100%);
+        transform: translate(100%, 0%); /* Right edge */
+    }
+    75% {
+        transform: translate(0%, 100%); /* Bottom edge */
     }
     100% {
-        transform: translate(-50%, -50%);
+        transform: translate(-100%, 0%); /* Left edge */
     }
 }
 
 @keyframes triangleMove {
     0% {
-        transform: translate(-50%, -50%);
+        transform: translate(0%, -100%); /* Top edge */
+    }
+    25% {
+        transform: translate(100%, 0%); /* Right edge */
     }
     50% {
-        transform: translate(-50%, 100%);
+        transform: translate(0%, 100%); /* Bottom edge */
+    }
+    75% {
+        transform: translate(-100%, 0%); /* Left edge */
     }
     100% {
-        transform: translate(-50%, -50%);
+        transform: translate(0%, -100%); /* Top edge */
     }
 }
 
 @keyframes xMove {
     0% {
-        transform: translate(-50%, -50%);
+        transform: translate(-100%, -100%); /* Top-left corner */
+    }
+    25% {
+        transform: translate(100%, -100%); /* Top-right corner */
     }
     50% {
-        transform: translate(100%, -50%);
+        transform: translate(100%, 100%); /* Bottom-right corner */
+    }
+    75% {
+        transform: translate(-100%, 100%); /* Bottom-left corner */
     }
     100% {
-        transform: translate(-50%, -50%);
+        transform: translate(-100%, -100%); /* Top-left corner */
     }
+}
+
+.square, .circle, .triangle, .x {
+    animation-timing-function: ease-in-out;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
 }
 
 nav {
