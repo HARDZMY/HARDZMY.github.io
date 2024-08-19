@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const id = entry.target.getAttribute('id');
                 const activeLink = document.querySelector(`nav ul li a[href="#${id}"]`);
 
-                navLinks.forEach(link => link.classList.remove('active'));
-                if (activeLink) {
+                // Add active class based on scrolling
+                if (activeLink && !activeLink.classList.contains('clicked')) {
                     activeLink.classList.add('active');
                 }
             }
@@ -29,6 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => {
         observer.observe(section);
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            // Add a class to indicate it was clicked
+            link.classList.add('clicked');
+            link.classList.add('active');
+
+            // Scroll to the section
+            const sectionId = link.getAttribute('href').substring(1);
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
     });
 });
 
