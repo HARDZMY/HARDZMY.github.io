@@ -214,6 +214,14 @@ section {
     background-color: transparent;
 }
 
+.separator {
+    width: 50%;
+    height: 1px;
+    background-color: #6b6b6b;
+    margin: 20px auto;
+    position: relative;
+}
+
 .persona {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
