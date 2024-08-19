@@ -34,12 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
-
-            // Add a class to indicate it was clicked
+            
             link.classList.add('clicked');
             link.classList.add('active');
 
-            // Scroll to the section
             const sectionId = link.getAttribute('href').substring(1);
             const section = document.getElementById(sectionId);
             if (section) {
