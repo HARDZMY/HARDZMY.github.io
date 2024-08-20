@@ -54,6 +54,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Section Pop-Up Transition Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('section-visible');
+                entry.target.classList.remove('section-hidden');
+            } else {
+                entry.target.classList.add('section-hidden');
+                entry.target.classList.remove('section-visible');
+            }
+        });
+    }, { threshold: 0.3 });
+
+    sections.forEach(section => {
+        section.classList.add('section-hidden'); // Start with hidden state
+        observer.observe(section);
+    });
+});
+
 
 // Footer
 var currentYear = new Date().getFullYear();
