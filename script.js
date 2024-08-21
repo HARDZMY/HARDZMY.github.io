@@ -17,11 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
-                
-                // Remove 'active' class from all links
                 navLinks.forEach(link => link.classList.remove('active'));
-
-                // Add 'active' class to the link corresponding to the intersecting section
                 const activeLink = document.querySelector(`nav ul li a[href="#${id}"]`);
                 if (activeLink) {
                     activeLink.classList.add('active');
@@ -38,10 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
 
-            // Remove 'clicked' class from all links
             navLinks.forEach(link => link.classList.remove('clicked'));
-
-            // Add 'clicked' and 'active' class to the clicked link
             link.classList.add('clicked');
             link.classList.add('active');
 
@@ -57,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Section Pop-Up Transition Animation
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
+    const imageItems = document.querySelectorAll('.image-item');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -71,8 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.3 });
 
     sections.forEach(section => {
-        section.classList.add('section-hidden'); // Start with hidden state
+        section.classList.add('section-hidden');
         observer.observe(section);
+    });
+
+    imageItems.forEach(item => {
+        item.classList.add('section-hidden');
+        observer.observe(item);
     });
 });
 
