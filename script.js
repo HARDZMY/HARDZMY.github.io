@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
 // Footer
 var currentYear = new Date().getFullYear();
 var yearText = currentYear + " | All rights reserved | HARDZMY";
