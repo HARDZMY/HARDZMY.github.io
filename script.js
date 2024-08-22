@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const imageItems = document.querySelectorAll('.image-item');
-    const modal = document.getElementById('myModal');
-    const modalImg = document.getElementById('img01');
-    const captionText = document.getElementById('caption');
+    // const modal = document.getElementById('myModal');
+    // const modalImg = document.getElementById('img01');
+    // const captionText = document.getElementById('caption');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -76,34 +76,34 @@ document.addEventListener('DOMContentLoaded', () => {
         item.classList.add('image-item-hidden');
         observer.observe(item);
 
-        const img = item.querySelector('img');
-        const caption = item.querySelector('div p:first-child').textContent;
+        // const img = item.querySelector('img');
+        // const caption = item.querySelector('div p:first-child').textContent;
 
-        img.addEventListener('click', () => {
-            showModal(img, caption);
-        });
+        // img.addEventListener('click', () => {
+        //     showModal(img, caption);
+        // });
     });
 
-    function showModal(img, caption) {
-        modal.style.display = 'block';
-        modalImg.src = img.src;
-        captionText.textContent = caption;
-        modalImg.style.animation = 'popUp 0.8s forwards';
+    // function showModal(img, caption) {
+    //     modal.style.display = 'block';
+    //     modalImg.src = img.src;
+    //     captionText.textContent = caption;
+    //     modalImg.style.animation = 'popUp 0.8s forwards';
 
-        document.addEventListener('scroll', closeModalOnScroll);
-    }
+    //     document.addEventListener('scroll', closeModalOnScroll);
+    // }
 
-    function closeModalOnScroll() {
-        modalImg.style.animation = 'popIn 0.8s forwards';
-        setTimeout(() => {
-            modal.style.display = 'none';
-            document.removeEventListener('scroll', closeModalOnScroll);
-        }, 300);
-    }
+    // function closeModalOnScroll() {
+    //     modalImg.style.animation = 'popIn 0.8s forwards';
+    //     setTimeout(() => {
+    //         modal.style.display = 'none';
+    //         document.removeEventListener('scroll', closeModalOnScroll);
+    //     }, 300);
+    // }
 
-    modal.addEventListener('click', () => {
-        closeModalOnScroll();
-    });
+    // modal.addEventListener('click', () => {
+    //     closeModalOnScroll();
+    // });
 });
 
 // Footer
