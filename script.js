@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Section Pop-Up Transition Animation
+// Section Pop-Up & Pop-In Transition Animation
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const imageItems = document.querySelectorAll('.image-item');
@@ -80,27 +80,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const caption = item.querySelector('div p:first-child').textContent;
 
         img.addEventListener('click', () => {
-            if (modal.style.display === 'block') {
-                modalImg.style.animation = 'popIn 0.4s forwards';
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                }, 300);
-            } else {
-                modal.style.display = 'block';
-                modalImg.src = img.src;
-                captionText.textContent = caption;
-                modalImg.style.animation = 'popUp 0.4s forwards';
-            }
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+            captionText.textContent = caption;
+            modalImg.style.animation = 'popUp 0.4s forwards';
         });
     });
 
-    modal.addEventListener('click', (event) => {
-        if (event.target === modalImg) {
-            modalImg.style.animation = 'popIn 0.3s forwards';
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 300);
-        }
+    modal.addEventListener('click', () => {
+        modalImg.style.animation = 'popIn 0.4s forwards';
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300);
     });
 });
 
