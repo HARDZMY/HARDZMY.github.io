@@ -51,6 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const imageItems = document.querySelectorAll('.image-item');
+    const modal = document.getElementById('myModal');
+    const modalImg = document.getElementById('img01');
+    const captionText = document.getElementById('caption');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -72,9 +75,34 @@ document.addEventListener('DOMContentLoaded', () => {
     imageItems.forEach(item => {
         item.classList.add('section-hidden');
         observer.observe(item);
+
+        const img = item.querySelector('img');
+        const caption = item.querySelector('div p:first-child').textContent;
+
+        img.addEventListener('click', () => {
+            if (modal.style.display === 'block') {
+                modalImg.style.animation = 'popIn 0.4s forwards';
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 300);
+            } else {
+                modal.style.display = 'block';
+                modalImg.src = img.src;
+                captionText.textContent = caption;
+                modalImg.style.animation = 'popUp 0.4s forwards';
+            }
+        });
+    });
+
+    modal.addEventListener('click', (event) => {
+        if (event.target === modalImg) {
+            modalImg.style.animation = 'popIn 0.3s forwards';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
     });
 });
-
 
 // Footer
 var currentYear = new Date().getFullYear();
