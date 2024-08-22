@@ -80,12 +80,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const caption = item.querySelector('div p:first-child').textContent;
 
         img.addEventListener('click', () => {
-            modal.style.display = 'block';
-            modalImg.src = img.src;
-            captionText.textContent = caption;
-            modalImg.style.animation = 'popUp 0.4s forwards';
+            showModal(img, caption);
+        });
+
+        img.addEventListener('touchstart', () => {
+            showModal(img, caption);
         });
     });
+
+    function showModal(img, caption) {
+        modal.style.display = 'block';
+        modalImg.src = img.src;
+        captionText.textContent = caption;
+        modalImg.style.animation = 'popUp 0.4s forwards';
+    }
 
     modal.addEventListener('click', () => {
         modalImg.style.animation = 'popIn 0.4s forwards';
