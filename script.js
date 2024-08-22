@@ -92,14 +92,23 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'block';
         modalImg.src = img.src;
         captionText.textContent = caption;
-        modalImg.style.animation = 'popUp 0.4s forwards';
+        modalImg.style.animation = 'popUp 0.8s forwards';
+
+        document.addEventListener('scroll', closeModalOnScrollOrMove);
+        document.addEventListener('touchmove', closeModalOnScrollOrMove);
+    }
+
+    function closeModalOnScrollOrMove() {
+        modalImg.style.animation = 'popIn 0.8s forwards';
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.removeEventListener('scroll', closeModalOnScrollOrMove);
+            document.removeEventListener('touchmove', closeModalOnScrollOrMove);
+        }, 300);
     }
 
     modal.addEventListener('click', () => {
-        modalImg.style.animation = 'popIn 0.4s forwards';
-        setTimeout(() => {
-            modal.style.display = 'none';
-        }, 300);
+        closeModalOnScrollOrMove();
     });
 });
 

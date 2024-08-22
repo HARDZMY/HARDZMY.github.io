@@ -348,12 +348,12 @@ section {
     background-color: rgba(0, 0, 0, 0.9);
     align-items: center;
     justify-content: center;
-    animation: fadeIn 0.4s;
+    animation: fadeIn 0.8s;
 }
 
 @keyframes popUp {
     from {
-        transform: scale(0.7);
+        transform: scale(0);
         opacity: 0;
     }
     to {
@@ -368,7 +368,7 @@ section {
         opacity: 1;
     }
     to {
-        transform: scale(0.7);
+        transform: scale(0);
         opacity: 0;
     }
 }
@@ -378,7 +378,7 @@ section {
     display: block;
     width: 200px;
     height: 200px;
-    animation: popUp 0.3s forwards;
+    animation: popUp 0.8s forwards;
     object-fit: cover;
     border-radius: 8px;
 }
