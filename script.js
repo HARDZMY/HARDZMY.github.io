@@ -82,10 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
         img.addEventListener('click', () => {
             showModal(img, caption);
         });
-
-        img.addEventListener('touchstart', () => {
-            showModal(img, caption);
-        });
     });
 
     function showModal(img, caption) {
@@ -94,21 +90,19 @@ document.addEventListener('DOMContentLoaded', () => {
         captionText.textContent = caption;
         modalImg.style.animation = 'popUp 0.8s forwards';
 
-        document.addEventListener('scroll', closeModalOnScrollOrMove);
-        document.addEventListener('touchmove', closeModalOnScrollOrMove);
+        document.addEventListener('scroll', closeModalOnScroll);
     }
 
-    function closeModalOnScrollOrMove() {
+    function closeModalOnScroll() {
         modalImg.style.animation = 'popIn 0.8s forwards';
         setTimeout(() => {
             modal.style.display = 'none';
-            document.removeEventListener('scroll', closeModalOnScrollOrMove);
-            document.removeEventListener('touchmove', closeModalOnScrollOrMove);
+            document.removeEventListener('scroll', closeModalOnScroll);
         }, 300);
     }
 
     modal.addEventListener('click', () => {
-        closeModalOnScrollOrMove();
+        closeModalOnScroll();
     });
 });
 
