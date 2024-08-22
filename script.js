@@ -58,11 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('section-visible');
-                entry.target.classList.remove('section-hidden');
+                entry.target.classList.add('section-visible', 'image-item-visible');
+                entry.target.classList.remove('section-hidden', 'image-item-hidden');
             } else {
-                entry.target.classList.add('section-hidden');
-                entry.target.classList.remove('section-visible');
+                entry.target.classList.add('section-hidden', 'image-item-hidden');
+                entry.target.classList.remove('section-visible', 'image-item-visible');
             }
         });
     }, { threshold: 0.3 });
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     imageItems.forEach(item => {
-        item.classList.add('section-hidden');
+        item.classList.add('image-item-hidden');
         observer.observe(item);
 
         const img = item.querySelector('img');
