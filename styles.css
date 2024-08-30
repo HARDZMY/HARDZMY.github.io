@@ -481,10 +481,10 @@ form button:hover {
 
 #goToTopBtn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
+    bottom: 25px;
+    right: 25px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color: #575757;
     color: #fff;
@@ -493,20 +493,20 @@ form button:hover {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
+    line-height: 0px;
     display: none;
     z-index: 1000;
     transition: background-color 0.3s, color 0.3s;
+    text-align: center;
 }
 
 #goToTopBtn:hover {
-    background-color: #2f2f2f
+    background-color: #2f2f2f;
 }
 
 #goToTopBtn::before {
     content: '↑';
-    font-size: 16px;
-    line-height: 1;
     display: inline-block;
     transition: color 0.3s;
 }
