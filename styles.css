@@ -477,6 +477,38 @@ form button:hover {
     background-color: #0056b3;
 }
 
+#goToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #575757;
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    display: none;
+    z-index: 1000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#goToTopBtn:hover {
+    background-color: #2f2f2f
+}
+
+#goToTopBtn::before {
+    content: '↑';
+    font-size: 16px;
+    line-height: 1;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
 .footer {
     display: flex;
     gap: 20px;
