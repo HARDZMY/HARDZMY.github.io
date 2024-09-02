@@ -494,21 +494,13 @@ form button:hover {
     justify-content: center;
     cursor: pointer;
     font-size: 20px;
-    line-height: 0px;
     display: none;
     z-index: 1000;
     transition: background-color 0.3s, color 0.3s;
-    text-align: center;
 }
 
 #goToTopBtn:hover {
     background-color: #2f2f2f;
-}
-
-#goToTopBtn::before {
-    content: '↑';
-    display: inline-block;
-    transition: color 0.3s;
 }
 
 .footer {
