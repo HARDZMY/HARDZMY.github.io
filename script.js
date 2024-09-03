@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// GO-To Top Button
+// Go-To Top Button
 document.addEventListener('DOMContentLoaded', function () {
     var goToTopBtn = document.getElementById('goToTopBtn');
 
