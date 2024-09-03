@@ -75,6 +75,162 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Tic-Tac-Toe
+document.addEventListener('DOMContentLoaded', () => {
+    const tics = document.querySelectorAll('.tic');
+    const restartButton = document.getElementById('restart-button');
+    let currentPlayer = 'X';
+    let gameBoard = Array(9).fill(null);
+    let gameActive = true;
+
+    const winningCombinations = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
+    tics.forEach(tic => {
+        tic.addEventListener('click', handleTicClick);
+    });
+
+    restartButton.addEventListener('click', restartGame);
+
+    function handleTicClick(event) {
+        const ticIndex = event.target.getAttribute('data-index');
+
+        if (gameBoard[ticIndex] || !gameActive) {
+            return;
+        }
+
+        gameBoard[ticIndex] = currentPlayer;
+        event.target.textContent = currentPlayer;
+
+        if (checkWin(currentPlayer)) {
+            endGame(`${currentPlayer} wins!`);
+        } else if (gameBoard.every(tic => tic)) {
+            endGame("It's a tie!");
+        } else {
+            switchPlayer();
+            if (currentPlayer === 'O') {
+                setTimeout(botMove, 200);
+            }
+        }
+    }
+
+    function botMove() {
+        const bestMove = findBestMove();
+        gameBoard[bestMove] = 'O';
+        tics[bestMove].textContent = 'O';
+
+        if (checkWin('O')) {
+            endGame('O wins!');
+        } else if (gameBoard.every(tic => tic)) {
+            endGame("It's a tie!");
+        } else {
+            switchPlayer();
+        }
+    }
+
+    function findBestMove() {
+        let bestScore = -Infinity;
+        let move;
+
+        for (let i = 0; i < gameBoard.length; i++) {
+            if (gameBoard[i] === null) {
+                gameBoard[i] = 'O';
+                let score = minimax(gameBoard, 0, false);
+                gameBoard[i] = null;
+
+                if (score > bestScore) {
+                    bestScore = score;
+                    move = i;
+                }
+            }
+        }
+        return move;
+    }
+
+    function minimax(board, depth, isMaximizing) {
+        let scores = {
+            'X': -1,
+            'O': 1,
+            'tie': 0
+        };
+
+        let result = checkWin('O') ? 'O' : checkWin('X') ? 'X' : board.every(tic => tic) ? 'tie' : null;
+        if (result !== null) {
+            return scores[result];
+        }
+
+        if (isMaximizing) {
+            let bestScore = -Infinity;
+            for (let i = 0; i < board.length; i++) {
+                if (board[i] === null) {
+                    board[i] = 'O';
+                    let score = minimax(board, depth + 1, false);
+                    board[i] = null;
+                    bestScore = Math.max(score, bestScore);
+                }
+            }
+            return bestScore;
+        } else {
+            let bestScore = Infinity;
+            for (let i = 0; i < board.length; i++) {
+                if (board[i] === null) {
+                    board[i] = 'X';
+                    let score = minimax(board, depth + 1, true);
+                    board[i] = null;
+                    bestScore = Math.min(score, bestScore);
+                }
+            }
+            return bestScore;
+        }
+    }
+
+    function switchPlayer() {
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    }
+
+    function checkWin(player) {
+        return winningCombinations.some(combination => {
+            return combination.every(index => {
+                return gameBoard[index] === player;
+            });
+        });
+    }
+
+    function endGame(message) {
+        gameActive = false;
+        setTimeout(() => {
+            Swal.fire({
+                title: message,
+                icon: message.includes("wins") ? "success" : "info",
+                confirmButtonText: 'Ok',
+                allowOutsideClick: false,
+                customClass: {
+                    popup: 'swal-custom-popup'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    restartGame();
+                }
+            });
+        }, 100);
+    }
+
+    function restartGame() {
+        gameBoard = Array(9).fill(null);
+        tics.forEach(tic => tic.textContent = '');
+        currentPlayer = 'X';
+        gameActive = true;
+    }
+});
+
 // GO-To Top Button
 document.addEventListener('DOMContentLoaded', function () {
     var goToTopBtn = document.getElementById('goToTopBtn');

@@ -408,6 +408,59 @@ section {
     }
 }
 
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.tic {
+    width: 80px;
+    height: 80px;
+    gap: 20px;
+    background-color: #575757;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tic:hover {
+    background-color: #2f2f2f
+}
+
+
+.swal-custom-popup {
+    background-color: #575757 !important;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.swal-custom-popup .swal2-title {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.swal-custom-popup .swal2-icon {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.swal-custom-popup .swal2-confirm {
+    background-color: #2f2f2f;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.swal-custom-popup .swal2-confirm:hover {
+    background-color: #274b70;
+}
+
 .close {
     display: none;
 }
