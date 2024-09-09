@@ -418,6 +418,7 @@ section {
 .tic {
     width: 80px;
     height: 80px;
+    border-radius: 8px;
     gap: 20px;
     background-color: #575757;
     font-size: 2em;
