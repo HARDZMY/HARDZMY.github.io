@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function (){
         if (molesClicked === totalMoles) {
             Swal.fire({
                 title: 'You Won!',
-                text: `You clicked all ${totalMoles} moles.`,
+                text: `You clicked all ${totalMoles} dots.`,
                 icon: 'success',
                 confirmButtonText: 'Ok',
                 allowOutsideClick: false,
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function (){
         } else {
             Swal.fire({
                 title: 'Game Over!',
-                text: `You clicked ${molesClicked} out of ${totalMoles} moles.`,
+                text: `You clicked ${molesClicked} out of ${totalMoles} dots.`,
                 icon: 'error',
                 confirmButtonText: 'Ok',
                 allowOutsideClick: false,
