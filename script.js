@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 confirmButtonText: 'Ok',
                 allowOutsideClick: false,
                 customClass: {
-                    popup: 'swal-custom-popup'
+                    popup: 'swal-tic'
                 }
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -229,6 +229,110 @@ document.addEventListener('DOMContentLoaded', () => {
         currentPlayer = 'X';
         gameActive = true;
     }
+});
+
+// Whack-a-Mole
+document.addEventListener('DOMContentLoaded', function (){
+    const board = document.getElementById('whack');
+    const scoreDisplay = document.getElementById('score-value');
+    const startButton = document.getElementById('start-button');
+    let score = 0;
+    const totalMoles = 15; // Total number of moles that will appear
+    let molesClicked = 0;
+    let moles = [];
+    let activeMoleIndex = -1;
+    const moleDuration = 900; // Time a mole stays up in milliseconds
+    const moleInterval = 1100; // Time between moles appearing in milliseconds
+    let gameInterval;
+    let moleCount = 0;
+
+    for (let i = 0; i < 9; i++) {
+        const hole = document.createElement('div');
+        hole.classList.add('hole');
+        board.appendChild(hole);
+
+        const mole = document.createElement('div');
+        mole.classList.add('mole');
+        hole.appendChild(mole);
+        moles.push(mole);
+
+        hole.addEventListener('click', () => {
+            if (moles.indexOf(mole) === activeMoleIndex) {
+                score++;
+                molesClicked++;
+                updateScore();
+                mole.style.display = 'none';
+                activeMoleIndex = -1;
+            }
+        });
+    }
+
+    function updateScore() {
+        scoreDisplay.textContent = `${molesClicked} out of ${totalMoles}`;
+    }
+
+    function showMole() {
+        if (moleCount >= totalMoles) {
+            endGame();
+            return;
+        }
+
+        if (activeMoleIndex >= 0) {
+            moles[activeMoleIndex].style.display = 'none';
+        }
+
+        activeMoleIndex = Math.floor(Math.random() * moles.length);
+        moles[activeMoleIndex].style.display = 'block';
+
+        setTimeout(() => {
+            if (moles[activeMoleIndex].style.display === 'block') {
+                moles[activeMoleIndex].style.display = 'none';
+                activeMoleIndex = -1;
+            }
+        }, moleDuration);
+
+        moleCount++;
+    }
+
+    function startGame() {
+        score = 0;
+        molesClicked = 0;
+        moleCount = 0;
+        updateScore();
+        gameInterval = setInterval(showMole, moleInterval);
+        startButton.disabled = true;
+    }
+
+    function endGame() {
+        clearInterval(gameInterval);
+        startButton.disabled = false;
+
+        if (molesClicked === totalMoles) {
+            Swal.fire({
+                title: 'You Won!',
+                text: `You clicked all ${totalMoles} moles.`,
+                icon: 'success',
+                confirmButtonText: 'Ok',
+                allowOutsideClick: false,
+                customClass: {
+                    popup: 'swal-whack'
+                }
+            });
+        } else {
+            Swal.fire({
+                title: 'Game Over!',
+                text: `You clicked ${molesClicked} out of ${totalMoles} moles.`,
+                icon: 'error',
+                confirmButtonText: 'Ok',
+                allowOutsideClick: false,
+                customClass: {
+                    popup: 'swal-whack2'
+                }
+            });
+        }
+    }
+
+    startButton.addEventListener('click', startGame);
 });
 
 // Go-To Top Button
