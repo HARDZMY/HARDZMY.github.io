@@ -202,6 +202,20 @@ nav ul li a.active {
     color: white;
 }
 
+@media (max-width: 768px) {
+    nav ul li a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 200px) {
+    nav ul li a {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
 section {
     padding: 70px 20px;
     display: flex;
