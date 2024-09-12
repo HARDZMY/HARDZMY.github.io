@@ -59,16 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const imageItems = document.querySelectorAll('.image-item');
-    const standardv2 = document.querySelectorAll('.standardv2');
+    const standardv2Items = document.querySelectorAll('.standardv2');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('section-visible');
-                entry.target.classList.remove('section-hidden');
+                entry.target.classList.add('section-visible', 'image-item-visible', 'standardv2-visible');
+                entry.target.classList.remove('section-hidden', 'image-item-hidden', 'standardv2-hidden');
             } else {
-                entry.target.classList.add('section-hidden');
-                entry.target.classList.remove('section-visible');
+                entry.target.classList.add('section-hidden', 'image-item-hidden', 'standardv2-hidden');
+                entry.target.classList.remove('section-visible', 'image-item-visible', 'standardv2-visible');
             }
         });
     }, { threshold: 0.3 });
@@ -79,12 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     imageItems.forEach(item => {
-        item.classList.add('section-hidden');
+        item.classList.add('image-item-hidden');
         observer.observe(item);
     });
 
-    standardv2.forEach(item => {
-        item.classList.add('section-hidden');
+    standardv2Items.forEach(item => {
+        item.classList.add('standardv2-hidden');
         observer.observe(item);
     });
 });
