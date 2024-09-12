@@ -1,3 +1,11 @@
+// Years of Experience
+document.addEventListener('DOMContentLoaded', function (){
+    const startYear = 2022;
+    const currentYear = new Date().getFullYear();
+    const yearsOfExperience = currentYear - startYear;
+    document.getElementById("years").textContent = yearsOfExperience;
+});
+
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
