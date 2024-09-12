@@ -171,6 +171,9 @@ nav {
     top: 0;
     z-index: 1000;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
 }
 
 nav ul {
@@ -179,12 +182,15 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 nav ul li {
     display: flex;
     align-items: center;
+    flex: 1;
 }
 
 nav ul li a {
@@ -193,6 +199,7 @@ nav ul li a {
     padding: 10px 15px;
     display: block;
     transition: background-color 0.3s, border-radius 0.3s;
+    text-align: center;
 }
 
 nav ul li a:hover,
@@ -202,17 +209,24 @@ nav ul li a.active {
     color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     nav ul li a {
         padding: 8px 12px;
         font-size: 14px;
     }
 }
 
-@media (max-width: 200px) {
+@media (max-width: 768px) {
     nav ul li a {
         padding: 6px 10px;
         font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li a {
+        padding: 4px 8px;
+        font-size: 10px;
     }
 }
 
@@ -270,11 +284,11 @@ section {
 .standardv2.section-visible {
     opacity: 1;
     transform: scale(1);
-    animation: popUp 0.8s forwards;
 }
 
 .standardv2.section-hidden {
-    animation: popIn 0.8s forwards;
+    opacity: 0;
+    transform: scale(0);
 }
 
 .skills {
