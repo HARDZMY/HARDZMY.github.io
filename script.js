@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tics[bestMove].textContent = 'O';
 
         if (checkWin('O')) {
-            endGame('O wins!');
+            endGame('You lose! :P');
         } else if (gameBoard.every(tic => tic)) {
             endGame("It's a tie!");
         } else {
