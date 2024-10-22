@@ -368,5 +368,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Footer
 var currentYear = new Date().getFullYear();
-var yearText = currentYear + " | All rights reserved | HARDZMY";
+var yearText = currentYear + " | All rights reserved | HARDZMY " + "\u{1F680}";
 document.getElementById("currentYear").textContent = yearText;
