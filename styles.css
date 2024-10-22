@@ -669,7 +669,31 @@ section {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: inherit;
+    transition: color 0.3s ease; 
+}
+
+.social-icon:hover {
+    color: #0078D4;
+}
+
+.social-icon.facebook:hover {
+    color: #3b5998;
+}
+
+.social-icon.instagram:hover {
+    color: #e1306c;
+}
+
+.social-icon.youtube:hover {
+    color: #FF0000;
+}
+
+.social-icon.linkedin:hover {
+    color: #0077b5;
+}
+
+.social-icon.github:hover {
+    color: #f39c12;
 }
 
 .social-icon i {
