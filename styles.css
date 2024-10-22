@@ -230,10 +230,6 @@ nav ul li a.active {
     }
 }
 
-.hidden-iframe {
-    display: none;
-}
-
 section {
     padding: 70px 20px;
     display: flex;
