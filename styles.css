@@ -279,6 +279,7 @@ section {
     opacity: 0;
     transform: scale(0);
     transition: opacity 0.8s ease, transform 0.8s ease;
+    max-width: 600px;
 }
 
 .standardv2.section-visible {
@@ -358,6 +359,7 @@ section {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 620px;
 }
 
 .image-item {
