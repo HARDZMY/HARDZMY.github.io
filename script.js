@@ -89,6 +89,62 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    function showModal() {
+        const modalElement = document.querySelector('.modal');
+        modalElement.classList.add('modal-visible');
+    }
+
+    function hideModal() {
+        const modalElement = document.querySelector('.modal');
+        modalElement.classList.remove('modal-visible');
+        
+        setTimeout(() => {
+            modalElement.style.display = 'none';
+        }, 200);
+    }
+
+    document.querySelector('.open-modal-button').addEventListener('click', function() {
+        const modalElement = document.querySelector('.modal');
+        modalElement.style.display = 'flex';
+        showModal();
+    });
+
+    document.querySelector('.close-modal-button').addEventListener('click', hideModal);
+    document.querySelector('.modal').addEventListener('click', function(event) {
+        if (event.target === this) {
+            hideModal();
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
+        function showSkills() {
+            const skillsElement = document.querySelector('.skills');
+            skillsElement.style.display = 'flex';
+            requestAnimationFrame(() => {
+                skillsElement.classList.remove('skills-hidden');
+                skillsElement.classList.add('skills-visible');
+            });
+        }
+    
+        function hideSkills() {
+            const skillsElement = document.querySelector('.skills');
+            skillsElement.classList.remove('skills-visible');
+            skillsElement.classList.add('skills-hidden');
+
+            setTimeout(() => {
+                skillsElement.style.display = 'none';
+            }, 200);
+        }
+    
+        document.querySelector('.show-skills-button').addEventListener('click', showSkills);
+    
+        document.querySelector('.hide-skills-button').addEventListener('click', hideSkills);
+    });
+});
+
 // Tic-Tac-Toe
 document.addEventListener('DOMContentLoaded', () => {
     const tics = document.querySelectorAll('.tic');

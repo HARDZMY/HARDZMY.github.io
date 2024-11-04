@@ -278,19 +278,19 @@ section {
     margin-right: 5%;
     font-size: 14px;
     opacity: 0;
-    transform: scale(0);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
     max-width: 450px;
 }
 
-.standardv2.section-visible {
+.standardv2-visible {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
 }
 
-.standardv2.section-hidden {
+.standardv2-hidden {
     opacity: 0;
-    transform: scale(0);
+    transform: translateY(20px);
 }
 
 .skills {
@@ -327,6 +327,17 @@ section {
     .skills span {
         width: calc(100% - 10px);
     }
+}
+
+
+.skills-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills-hidden {
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 .image-container {
