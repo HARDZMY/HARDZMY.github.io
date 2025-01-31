@@ -425,5 +425,5 @@ document.addEventListener('DOMContentLoaded', function () {
 // Footer
 var currentYear = new Date().getFullYear();
 var yearText = currentYear + " | All rights reserved | HARDZMY ";
-var rocketGif = '<img src="rocket.gif" alt="rocket" style="vertical-align: middle; width: 22px; height: 22px;">';
+var rocketGif = '<img src="resources/rocket.gif" alt="rocket" style="vertical-align: middle; width: 22px; height: 22px;">';
 document.getElementById("currentYear").innerHTML = yearText + rocketGif;
