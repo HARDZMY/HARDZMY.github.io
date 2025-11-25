@@ -1,3 +1,36 @@
+// Dynamic - Working Role [Typing Effect]
+const roles = ["Developer", "Programmer", "System Engineer", "System Analyst"];
+    const element = document.getElementById("dynamic-role");
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+        const currentRole = roles[roleIndex];
+        if (isDeleting) {
+            charIndex--;
+            element.textContent = currentRole.substring(0, charIndex);
+        } else {
+            charIndex++;
+            element.textContent = currentRole.substring(0, charIndex);
+        }
+
+        let typeSpeed = isDeleting ? 80 : 150;
+
+        if (!isDeleting && charIndex === currentRole.length) {
+            typeSpeed = 1000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typeSpeed = 500;
+        }
+
+        setTimeout(typeEffect, typeSpeed);
+    }
+
+    typeEffect();
+
 // Years of Experience
 document.addEventListener('DOMContentLoaded', function (){
     const startYear = 2022;
