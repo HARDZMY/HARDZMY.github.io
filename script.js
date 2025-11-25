@@ -1,5 +1,5 @@
 // Dynamic - Working Role [Typing Effect]
-const roles = ["Developer", "Programmer", "System Engineer", "System Analyst"];
+const roles = ["Programmer", "System Engineer", "Full-Stack Developer", "RPA Developer", "System Analyst"];
     const element = document.getElementById("dynamic-role");
     let roleIndex = 0;
     let charIndex = 0;
