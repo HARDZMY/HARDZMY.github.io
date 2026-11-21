@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>HARDZMY</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body
+  id="top"
+  class="relative bg-slate-50 dark:bg-[#020617] text-slate-900 dark:text-slate-100
+  font-sans text-sm font-normal overflow-x-hidden select-none"
+>
+
+  <div class="blob w-[500px] h-[500px] bg-blue-500    top-[-100px]   left-[-100px]"></div>
+  <div class="blob w-[400px] h-[400px] bg-cyan-400    top-[600px]    right-[-100px]"></div>
+  <div class="blob w-[450px] h-[400px] bg-purple-500  top-[1600px]   left-[-150px]"></div>
+  <div class="blob w-[400px] h-[400px] bg-blue-500    bottom-[200px] right-[-120px]"></div>
+
+  <nav class="fixed w-full z-[100] border-b border-slate-200/50 dark:border-slate-800/50
+              bg-white/60 dark:bg-[#020617]/60 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+
+      <span class="text-sm font-semibold tracking-tight text-slate-900 dark:text-white">
+        HARDZMY<span class="text-brand">.</span>
+      </span>
+
+      <div class="flex items-center gap-8">
+        <div class="hidden md:flex gap-8 text-sm font-medium text-slate-600 dark:text-slate-400">
+          <a href="#persona"      class="nav-link hover:text-brand transition">Profile</a>
+          <a href="#work"         class="nav-link hover:text-brand transition">Experience</a>
+          <a href="#expertise"    class="nav-link hover:text-brand transition">Expertise</a>
+          <a href="#certificates" class="nav-link hover:text-brand transition">Certificates</a>
+          <a href="#education"    class="nav-link hover:text-brand transition">Education</a>
+          <a href="#galleria"     class="nav-link hover:text-brand transition">Galleria</a>
+          <a href="#contact"      class="nav-link hover:text-brand transition">Contact</a>
+        </div>
+
+        <button
+          type="button"
+          onclick="toggleDarkMode()"
+          aria-label="Toggle Dark Mode"
+          class="w-9 h-9 flex items-center justify-center rounded-full
+            border border-slate-200 dark:border-slate-800 shadow-sm
+            transition hover:border-brand active:scale-90"
+        >
+          <i class="fa-solid fa-moon text-sm dark:hidden"></i>
+          <i class="fa-solid fa-sun text-sm hidden dark:block text-yellow-400"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Profile intro -->
+  <section id="persona" class="relative z-10 pt-28 sm:pt-36 md:pt-48 pb-20 md:pb-24 px-4 sm:px-6 scroll-mt-20">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-10 md:gap-12 items-center">
+
+      <div class="md:col-span-8 text-left">
+        <p class="text-brand font-semibold tracking-wider uppercase text-sm mb-3">I'm a</p>
+
+        <h1 class="text-2xl md:text-3xl font-semibold tracking-tight leading-tight min-h-[44px]">
+          <span id="typewriter" class="text-slate-900 dark:text-white"></span>
+          <span class="text-brand animate-pulse">|</span>
+        </h1>
+
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-6 max-w-xl leading-relaxed font-normal text-justify">
+          Hi, I'm <span class="text-slate-900 dark:text-white font-semibold">Hazmi Hashim</span>, a
+          <span class="text-brand font-handwriting text-lg md:text-xl leading-none">Senior System Analyst (System Engineer)</span> with over
+          <span id="years"></span> years of experience in designing,
+          developing, and maintaining technology-driven solutions. My expertise covers web and application
+          development, backend architecture, business logic, process automation, data management, and SRS documentation.
+        </p>
+
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-4 max-w-xl leading-relaxed font-normal text-justify">
+          I thrive on transforming complex business requirements into practical, scalable, and efficient solutions.
+          Beyond development, I continuously expand my knowledge across broader IT domains, including infrastructure,
+          networking, database administration, and system operations, with a strong focus on bridging technology,
+          business needs, and long-term organizational growth.
+        </p>
+      </div>
+
+      <div class="md:col-span-4 flex items-center justify-center self-center">
+        <div class="w-44 h-44 sm:w-52 sm:h-52 md:w-56 md:h-56 mx-auto rounded-[2.5rem]
+                    bg-gradient-to-tr from-brand to-cyan-400 p-[2px] shadow-2xl
+                    hover:shadow-brand/40 hover:scale-[1.02] transition duration-500">
+          <div class="w-full h-full bg-white dark:bg-slate-800 rounded-[calc(2.5rem-2px)] overflow-hidden flex items-center justify-center">
+            <img src="resources/ProfilePicture.jpg" alt="HARDZMY" draggable="false" class="w-full h-full object-cover object-center transition duration-500">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Work experience -->
+  <section id="work" class="relative z-10 py-20 md:py-24 px-4 sm:px-6 scroll-mt-20">
+    <div class="max-w-4xl mx-auto">
+
+      <h3 class="text-xl font-semibold uppercase tracking-tight mb-12 flex items-center gap-3">
+        <i class="fa-solid fa-briefcase text-brand"></i> Experience
+      </h3>
+
+      <div class="space-y-8">
+
+        <div class="glass group relative p-6 sm:p-8 rounded-[2rem] shadow-sm transition-all duration-300
+                    hover:shadow-xl hover:-translate-y-1 hover:border-brand/40">
+          <div class="flex flex-row items-center gap-4 sm:gap-6 md:gap-8">
+            <div class="w-16 h-16 shrink-0 rounded-2xl flex items-center
+                        justify-center p-2 shadow-lg transition group-hover:scale-105">
+              <img src="resources/SONY.png" alt="Sony EMCS Malaysia Sdn. Bhd." draggable="false" class="w-full h-full object-contain object-center mx-auto">
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="text-base font-semibold tracking-tight mb-6 text-slate-900 dark:text-white">
+                SONY EMCS Malaysia Sdn. Bhd.
+              </h4>
+              <div class="space-y-8 relative">
+                <div class="absolute left-[7px] top-2 bottom-2 w-[1px] bg-slate-300/50 dark:bg-slate-700/50"></div>
+
+                <div class="relative pl-8">
+                  <div class="absolute left-0 top-2 w-[15px] h-[15px] rounded-full border-4
+                              border-brand bg-white dark:bg-slate-900 z-10"></div>
+                  <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2 mb-3">
+                    <h5 class="text-sm font-semibold text-slate-900 dark:text-white">
+                      Senior System Analyst (System Engineer)
+                    </h5>
+                    <span class="text-sm font-semibold text-brand shrink-0">Oct 2025 – Present</span>
+                  </div>
+                  <ul class="exp-list">
+                    <li>Lead full-stack web projects from planning to launch, improve overall system speed and stability, and guide junior developers.</li>
+                  </ul>
+                </div>
+
+                <div class="relative pl-8">
+                  <div class="absolute left-[3px] top-2 w-[9px] h-[9px] rounded-full
+                              bg-slate-400/70 dark:bg-slate-600 z-10"></div>
+                  <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2 mb-3">
+                    <h5 class="text-sm font-semibold text-slate-900 dark:text-white">
+                      System Analyst (System Engineer)
+                    </h5>
+                    <span class="text-sm font-medium text-slate-500 dark:text-slate-400 shrink-0">Jul 2023 – Sep 2025</span>
+                  </div>
+                  <ul class="exp-list">
+                    <li>Automated daily work processes and managed databases, SQL queries, and stored procedures to reduce manual tasks.</li>
+                  </ul>
+                </div>
+
+                <div class="relative pl-8">
+                  <div class="absolute left-[3px] top-2 w-[9px] h-[9px] rounded-full
+                              bg-slate-400/70 dark:bg-slate-600 z-10"></div>
+                  <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2 mb-3">
+                    <h5 class="text-sm font-semibold text-slate-900 dark:text-white">
+                      System Engineer (Internship - Degree)
+                    </h5>
+                    <span class="text-sm font-medium text-slate-500 dark:text-slate-400 shrink-0">Feb 2023 – Jun 2023</span>
+                  </div>
+                  <ul class="exp-list">
+                    <li>Helped build internal web apps and connect factory IoT data for live monitoring and alerts.</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass group relative p-6 sm:p-8 rounded-[2rem] shadow-sm transition-all duration-300
+                    hover:shadow-xl hover:-translate-y-1 hover:border-brand/40">
+          <div class="flex flex-row items-center gap-4 sm:gap-6 md:gap-8">
+            <div class="w-16 h-16 shrink-0 rounded-2xl flex items-center
+                        justify-center p-2 shadow-lg transition group-hover:scale-105">
+              <img src="resources/NSS.png" alt="NSS IT Solution Sdn. Bhd." draggable="false" class="w-full h-full object-contain object-center mx-auto">
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="text-base font-semibold tracking-tight mb-6 text-slate-900 dark:text-white">
+                NSS IT Solution Sdn. Bhd.
+              </h4>
+              <div class="space-y-8 relative">
+                <div class="absolute left-[7px] top-2 bottom-2 w-[1px] bg-slate-300/50 dark:bg-slate-700/50"></div>
+
+                <div class="relative pl-8">
+                  <div class="absolute left-0 top-2 w-[15px] h-[15px] rounded-full border-4
+                              border-brand bg-white dark:bg-slate-900 z-10"></div>
+                  <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2 mb-3">
+                    <h5 class="text-sm font-semibold text-slate-900 dark:text-white">
+                      IT Technician
+                    </h5>
+                    <span class="text-sm font-medium text-slate-500 dark:text-slate-400 shrink-0">Jan 2020 – Feb 2020</span>
+                  </div>
+                  <ul class="exp-list">
+                    <li>Maintained ticketing kiosks, barrier gates, and IT hardware to keep daily operations at TBS running smoothly.</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass group relative p-6 sm:p-8 rounded-[2rem] shadow-sm transition-all duration-300
+                    hover:shadow-xl hover:-translate-y-1 hover:border-brand/40">
+          <div class="flex flex-row items-center gap-4 sm:gap-6 md:gap-8">
+            <div class="w-16 h-16 shrink-0 rounded-2xl flex items-center
+                        justify-center p-2 shadow-lg transition group-hover:scale-105">
+              <img src="resources/KUPTM.png" alt="College University Poly-Tech MARA" draggable="false" class="w-full h-full object-contain object-center mx-auto">
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="text-base font-semibold tracking-tight mb-6 text-slate-900 dark:text-white">
+                College University Poly-Tech MARA
+              </h4>
+              <div class="space-y-8 relative">
+                <div class="absolute left-[7px] top-2 bottom-2 w-[1px] bg-slate-300/50 dark:bg-slate-700/50"></div>
+
+                <div class="relative pl-8">
+                  <div class="absolute left-0 top-2 w-[15px] h-[15px] rounded-full border-4
+                              border-brand bg-white dark:bg-slate-900 z-10"></div>
+                  <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2 mb-3">
+                    <h5 class="text-sm font-semibold text-slate-900 dark:text-white">
+                      IT Technician (Internship - Diploma)
+                    </h5>
+                    <span class="text-sm font-medium text-slate-500 dark:text-slate-400 shrink-0">Sep 2019 – Dec 2019</span>
+                  </div>
+                  <ul class="exp-list">
+                    <li>Set up campus networks, fixed hardware issues, and provided daily IT support for staff and students.</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Expertise -->
+  <section id="expertise" class="relative z-10 py-20 md:py-24 px-4 sm:px-6 scroll-mt-20">
+    <div class="max-w-4xl mx-auto">
+
+      <h3 class="text-xl font-semibold uppercase tracking-tight mb-10 flex items-center gap-3">
+        <i class="fa-solid fa-laptop-code text-brand"></i> Technical Expertise
+      </h3>
+
+      <div class="space-y-10">
+
+        <!-- Programming & Frameworks -->
+        <div>
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-code text-brand text-xs"></i> Programming &amp; Frameworks
+          </h4>
+          <div class="skill-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#3776AB] dark:hover:border-[#6BAED6]">
+              <i class="fa-brands fa-python text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#3776AB] dark:group-hover:text-[#6BAED6]"></i>
+              <span class="text-sm font-medium text-center">Python</span>
+            </div>
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#512BD4] dark:hover:border-[#9B7EF0]">
+              <i class="fa-solid fa-hashtag text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#512BD4] dark:group-hover:text-[#9B7EF0]"></i>
+              <span class="text-sm font-medium text-center">C#</span>
+            </div>
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#512BD4] dark:hover:border-[#9B7EF0]">
+              <i class="fa-solid fa-layer-group text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#512BD4] dark:group-hover:text-[#9B7EF0]"></i>
+              <span class="text-sm font-medium text-center">.NET</span>
+            </div>
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#61DAFB] dark:hover:border-[#61DAFB]">
+              <i class="fa-brands fa-react text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#61DAFB] dark:group-hover:text-[#61DAFB]"></i>
+              <span class="text-sm font-medium text-center">React</span>
+            </div>
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#E6C200] dark:hover:border-[#F7DF1E]">
+              <i class="fa-brands fa-js text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#E6C200] dark:group-hover:text-[#F7DF1E]"></i>
+              <span class="text-sm font-medium text-center">JavaScript</span>
+            </div>
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#42B883] dark:hover:border-[#42B883]">
+              <i class="fa-brands fa-vuejs text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#42B883] dark:group-hover:text-[#42B883]"></i>
+              <span class="text-sm font-medium text-center">Vue</span>
+            </div>
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#2563EB] dark:hover:border-[#60A5FA]">
+              <i class="fa-solid fa-terminal text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#2563EB] dark:group-hover:text-[#60A5FA]"></i>
+              <span class="text-sm font-medium text-center">Visual Basic</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Data, BI & Reporting -->
+        <div>
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-chart-line text-brand text-xs"></i> Data, BI &amp; Reporting
+          </h4>
+          <div class="skill-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#00758F] dark:hover:border-[#3FB6CE]">
+              <i class="fa-solid fa-database text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#00758F] dark:group-hover:text-[#3FB6CE]"></i>
+              <span class="text-sm font-medium text-center leading-snug">SQL (Database Design, Stored Procedures)</span>
+            </div>
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#F2C811] dark:hover:border-[#FACC15]">
+              <i class="fa-solid fa-chart-pie text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#F2C811] dark:group-hover:text-[#FACC15]"></i>
+              <span class="text-sm font-medium text-center">Power BI</span>
+            </div>
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#E11D48] dark:hover:border-[#FB7185]">
+              <i class="fa-solid fa-chart-bar text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#E11D48] dark:group-hover:text-[#FB7185]"></i>
+              <span class="text-sm font-medium text-center">eChart</span>
+            </div>
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#0284C7] dark:hover:border-[#38BDF8]">
+              <i class="fa-solid fa-file-lines text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#0284C7] dark:group-hover:text-[#38BDF8]"></i>
+              <span class="text-sm font-medium text-center leading-snug">Server Reporting Service (SSRS)</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Automation -->
+        <div>
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-robot text-brand text-xs"></i> Automation
+          </h4>
+          <div class="skill-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#0066FF] dark:hover:border-[#4D94FF]">
+              <i class="fa-solid fa-bolt text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#0066FF] dark:group-hover:text-[#4D94FF]"></i>
+              <span class="text-sm font-medium text-center">Power Automate</span>
+            </div>
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#FA4616] dark:hover:border-[#FF7A50]">
+              <i class="fa-solid fa-robot text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#FA4616] dark:group-hover:text-[#FF7A50]"></i>
+              <span class="text-sm font-medium text-center">Robotic Process Automation</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Analysis, Design & Tools -->
+        <div>
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-sitemap text-brand text-xs"></i> Analysis, Design &amp; Tools
+          </h4>
+          <div class="skill-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-brand">
+              <i class="fa-solid fa-repeat text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-brand"></i>
+              <span class="text-sm font-medium text-center">SDLC</span>
+            </div>
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#8B5CF6] dark:hover:border-[#A78BFA]">
+              <i class="fa-solid fa-diagram-project text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#8B5CF6] dark:group-hover:text-[#A78BFA]"></i>
+              <span class="text-sm font-medium text-center">UML Diagram</span>
+            </div>
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#10B981] dark:hover:border-[#34D399]">
+              <i class="fa-solid fa-share-nodes text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#10B981] dark:group-hover:text-[#34D399]"></i>
+              <span class="text-sm font-medium text-center">Flowcharts</span>
+            </div>
+
+            <div class="skill-card glass flex flex-col items-center justify-center p-5 rounded-3xl shadow-sm transition-all duration-300
+                        hover:-translate-y-1 hover:shadow-lg group hover:border-[#F05032] dark:hover:border-[#FF7A5C]">
+              <i class="fa-brands fa-git-alt text-lg mb-3 text-slate-400 transition-all duration-300
+                        group-hover:scale-110 group-hover:text-[#F05032] dark:group-hover:text-[#FF7A5C]"></i>
+              <span class="text-sm font-medium text-center">Git</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certificates" class="relative z-10 py-20 md:py-24 px-4 sm:px-6 scroll-mt-20">
+    <div class="max-w-4xl mx-auto">
+
+      <h3 class="text-xl font-semibold uppercase tracking-tight mb-10 flex items-center gap-3">
+        <i class="fa-solid fa-award text-brand"></i> Certificates
+      </h3>
+
+      <div class="grid md:grid-cols-2 gap-6
+          [&>*:last-child:nth-child(odd)]:md:col-start-1
+          [&>*:last-child:nth-child(odd)]:md:col-span-2
+          [&>*:last-child:nth-child(odd)]:md:max-w-[50%]
+          [&>*:last-child:nth-child(odd)]:md:mx-auto">
+
+        <div class="glass flex gap-5 p-6 rounded-3xl shadow-sm hover:shadow-xl
+                    hover:-translate-y-1 hover:border-brand/40 transition-all duration-300 group">
+          <div class="w-14 h-14 shrink-0 bg-slate-100/70 dark:bg-slate-800/70 rounded-2xl
+                      flex items-center justify-center transition group-hover:scale-110">
+            <img src="resources/AS.png" alt="AS" draggable="false" class="w-8 h-8 object-contain">
+          </div>
+          <div>
+            <p class="text-sm font-medium mb-1 text-slate-500 dark:text-slate-400">Microsoft Azure</p>
+            <h4 class="text-base font-semibold leading-snug text-slate-900 dark:text-white">
+              Azure Designing and Implementing an Azure AI Solution
+            </h4>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 font-normal">Certified 2025</p>
+          </div>
+        </div>
+
+        <div class="glass flex gap-5 p-6 rounded-3xl shadow-sm hover:shadow-xl
+                    hover:-translate-y-1 hover:border-brand/40 transition-all duration-300 group">
+          <div class="w-14 h-14 shrink-0 bg-slate-100/70 dark:bg-slate-800/70 rounded-2xl
+                      flex items-center justify-center transition group-hover:scale-110">
+            <img src="resources/IS.png" alt="IS" draggable="false" class="w-8 h-8 object-contain">
+          </div>
+          <div>
+            <p class="text-sm font-medium mb-1 text-slate-500 dark:text-slate-400">Microsoft Azure</p>
+            <h4 class="text-base font-semibold leading-snug text-slate-900 dark:text-white">
+              Azure Designing Infrastructure Solutions
+            </h4>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 font-normal">Certified 2024</p>
+          </div>
+        </div>
+
+        <div class="glass flex gap-5 p-6 rounded-3xl shadow-sm hover:shadow-xl
+                    hover:-translate-y-1 hover:border-brand/40 transition-all duration-300 group">
+          <div class="w-14 h-14 shrink-0 bg-slate-100/70 dark:bg-slate-800/70 rounded-2xl
+                      flex items-center justify-center transition group-hover:scale-110">
+            <img src="resources/PAutomate.png" alt="PAutomate" draggable="false" class="w-8 h-8 object-contain">
+          </div>
+          <div>
+            <p class="text-sm font-medium mb-1 text-slate-500 dark:text-slate-400">Microsoft Power Automate</p>
+            <h4 class="text-base font-semibold leading-snug text-slate-900 dark:text-white">
+              Power Automate RPA Developer
+            </h4>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 font-normal">Certified 2024</p>
+          </div>
+        </div>
+
+        <div class="glass flex gap-5 p-6 rounded-3xl shadow-sm hover:shadow-xl
+                    hover:-translate-y-1 hover:border-brand/40 transition-all duration-300 group">
+          <div class="w-14 h-14 shrink-0 bg-slate-100/70 dark:bg-slate-800/70 rounded-2xl
+                      flex items-center justify-center transition group-hover:scale-110">
+            <img src="resources/Cisco.png" alt="Cisco" draggable="false" class="w-8 h-8 object-contain">
+          </div>
+          <div>
+            <p class="text-sm font-medium mb-1 text-slate-500 dark:text-slate-400">Cisco CCNA</p>
+            <h4 class="text-base font-semibold leading-snug text-slate-900 dark:text-white">
+              CCNA Routing and Switching: Introduction to Networks
+            </h4>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 font-normal">Certified 2019</p>
+          </div>
+        </div>
+
+        <div class="glass flex gap-5 p-6 rounded-3xl shadow-sm hover:shadow-xl
+                    hover:-translate-y-1 hover:border-brand/40 transition-all duration-300 group">
+          <div class="w-14 h-14 shrink-0 bg-slate-100/70 dark:bg-slate-800/70 rounded-2xl
+                      flex items-center justify-center transition group-hover:scale-110">
+            <img src="resources/BOFA.png" alt="BOFA" draggable="false" class="w-8 h-8 object-contain">
+          </div>
+          <div>
+            <p class="text-sm font-medium mb-1 text-slate-500 dark:text-slate-400">Occupational Safety and Health (OSH)</p>
+            <h4 class="text-base font-semibold leading-snug text-slate-900 dark:text-white">
+              Basic Occupational First Aid (BOFA) &amp; CPR Certification
+            </h4>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 font-normal">Certified 2026 · Valid Until 2029</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="relative z-10 py-20 md:py-24 px-4 sm:px-6 scroll-mt-20">
+    <div class="max-w-4xl mx-auto">
+
+      <h3 class="text-xl font-semibold uppercase tracking-tight mb-10 flex items-center gap-3">
+        <i class="fa-solid fa-graduation-cap text-brand"></i> Education
+      </h3>
+
+      <div class="space-y-6">
+        <div class="glass flex items-center gap-6 p-6 rounded-3xl shadow-sm hover:shadow-xl
+                    hover:-translate-y-1 hover:border-brand/40 transition-all duration-300 group">
+          <div class="w-16 h-16 shrink-0 rounded-2xl flex items-center justify-center overflow-hidden p-2">
+            <img
+              src="resources/UniKL.png"
+              alt="UniKL"
+              draggable="false"
+              class="w-full h-full object-contain transition duration-500"
+            >
+          </div>
+          <div class="text-left">
+            <h4 class="text-base font-semibold leading-snug text-slate-900 dark:text-white">
+              Bachelor Degree of Information Technology (Hons.) in Software Engineering
+            </h4>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1 font-normal">
+              University of Kuala Lumpur • 2023
+            </p>
+          </div>
+        </div>
+
+        <div class="glass flex items-center gap-6 p-6 rounded-3xl shadow-sm hover:shadow-xl
+                    hover:-translate-y-1 hover:border-brand/40 transition-all duration-300 group">
+          <div class="w-16 h-16 shrink-0 rounded-2xl flex items-center justify-center overflow-hidden p-2">
+            <img
+              src="resources/KUPTM.png"
+              alt="KUPTM"
+              draggable="false"
+              class="w-full h-full object-contain transition duration-500"
+            >
+          </div>
+          <div class="text-left">
+            <h4 class="text-base font-semibold leading-snug text-slate-900 dark:text-white">
+              Diploma in Computer Science
+            </h4>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1 font-normal">
+              College University of Poly-Tech Mara • 2019
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Galleria (loop track cloned dynamically via JS) -->
+  <section id="galleria" class="relative z-10 py-20 scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 mb-6">
+      <h3 class="text-xl font-semibold uppercase tracking-tight flex items-center gap-3">
+        <i class="fa-solid fa-images text-brand"></i> Galleria
+      </h3>
+      <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm font-normal text-justify">
+        Derived from the Italian word <span class="text-slate-700 dark:text-slate-300 font-medium italic">'Galleria'</span>
+        meaning a gallery or space for displaying collections of art and visual expressions, this section is a personal showcase of
+        moments, places, and experiences captured. Each photograph represents a fragment of a journey, a memory worth keeping, or a
+        perspective that tells its own story.<br><br> From breathtaking landscapes and scenic coastlines to quiet surroundings and
+        hidden places, I find inspiration in exploring the outdoors, embracing new experiences, and capturing the little details that make every journey memorable.
+      </p>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="galleria-viewport relative overflow-hidden rounded-[2rem]">
+
+        <div class="pointer-events-none absolute inset-y-0 left-0 w-10 sm:w-20 z-10
+                    bg-gradient-to-r from-slate-50/90 to-transparent dark:from-[#020617]/90"></div>
+        <div class="pointer-events-none absolute inset-y-0 right-0 w-10 sm:w-20 z-10
+                    bg-gradient-to-l from-slate-50/90 to-transparent dark:from-[#020617]/90"></div>
+
+        <div class="galleria-track flex w-max items-stretch">
+
+          <div class="galleria-group flex gap-4 sm:gap-6 pr-4 sm:pr-6 shrink-0">
+
+            <article class="galleria-card w-[220px] sm:w-[260px] shrink-0 rounded-[2rem] overflow-hidden shadow-lg glass group flex flex-col">
+              <div class="w-full aspect-square overflow-hidden">
+                <img src="resources/1.jpg" draggable="false" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="ZMY">
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-center items-center text-center">
+                <p class="text-slate-900 dark:text-white text-sm font-medium leading-snug text-center">Beyond the ordinary, beyond expectations.</p>
+              </div>
+            </article>
+
+            <article class="galleria-card w-[220px] sm:w-[260px] shrink-0 rounded-[2rem] overflow-hidden shadow-lg glass group flex flex-col">
+              <div class="w-full aspect-square overflow-hidden">
+                <img src="resources/2.png" draggable="false" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Mount Kinabalu">
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-center items-center text-center">
+                <p class="text-slate-900 dark:text-white text-sm font-medium leading-snug text-center">Reaching new heights on the climb up Mount Kinabalu.</p>
+              </div>
+            </article>
+
+            <article class="galleria-card w-[220px] sm:w-[260px] shrink-0 rounded-[2rem] overflow-hidden shadow-lg glass group flex flex-col">
+              <div class="w-full aspect-square overflow-hidden">
+                <img src="resources/3.png" draggable="false" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Uzungol Turkey">
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-center items-center text-center">
+                <p class="text-slate-900 dark:text-white text-sm font-medium leading-snug text-center">Sitting above car enjoying atmosphere of Uzungöl, Türkiye.</p>
+              </div>
+            </article>
+
+            <article class="galleria-card w-[220px] sm:w-[260px] shrink-0 rounded-[2rem] overflow-hidden shadow-lg glass group flex flex-col">
+              <div class="w-full aspect-square overflow-hidden">
+                <img src="resources/4.jpg" draggable="false" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Bike Ride">
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-center items-center text-center">
+                <p class="text-slate-900 dark:text-white text-sm font-medium leading-snug text-center">N: 4° 36' 3.70" N<br>E: 10° 20' 41.69" E</p>
+              </div>
+            </article>
+
+            <article class="galleria-card w-[220px] sm:w-[260px] shrink-0 rounded-[2rem] overflow-hidden shadow-lg glass group flex flex-col">
+              <div class="w-full aspect-square overflow-hidden">
+                <img src="resources/5.jpg" draggable="false" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Fish">
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-center items-center text-center">
+                <p class="text-slate-900 dark:text-white text-sm font-medium leading-snug text-center">A glimpse into another world.</p>
+              </div>
+            </article>
+
+            <article class="galleria-card w-[220px] sm:w-[260px] shrink-0 rounded-[2rem] overflow-hidden shadow-lg glass group flex flex-col">
+              <div class="w-full aspect-square overflow-hidden">
+                <img src="resources/6.jpg" draggable="false" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Friends">
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-center items-center text-center">
+                <p class="text-slate-900 dark:text-white text-sm font-medium leading-snug text-center">Surrounded by the right kind of energy.</p>
+              </div>
+            </article>
+
+            <article class="galleria-card w-[220px] sm:w-[260px] shrink-0 rounded-[2rem] overflow-hidden shadow-lg glass group flex flex-col">
+              <div class="w-full aspect-square overflow-hidden">
+                <img src="resources/7.jpg" draggable="false" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Love">
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-center items-center text-center">
+                <p class="text-slate-900 dark:text-white text-sm font-medium leading-snug text-center">A lifetime of little moments worth remembering.</p>
+              </div>
+            </article>
+
+            <article class="galleria-card w-[220px] sm:w-[260px] shrink-0 rounded-[2rem] overflow-hidden shadow-lg glass group flex flex-col">
+              <div class="w-full aspect-square overflow-hidden">
+                <img src="resources/8.jpg" draggable="false" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Family">
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-center items-center text-center">
+                <p class="text-slate-900 dark:text-white text-sm font-medium leading-snug text-center">Built on love, held together by family.</p>
+              </div>
+            </article>
+
+            <article class="galleria-card w-[220px] sm:w-[260px] shrink-0 rounded-[2rem] overflow-hidden shadow-lg glass group flex flex-col">
+              <div class="w-full aspect-square overflow-hidden">
+                <img src="resources/9.jpg" draggable="false" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Ride">
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-center items-center text-center">
+                <p class="text-slate-900 dark:text-white text-sm font-medium leading-snug text-center">The road is calling, and I have no reason to ignore it.</p>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer & contact -->
+  <footer id="contact" class="relative z-10 pt-20 md:pt-32 pb-12 px-4 sm:px-6 scroll-mt-20
+                              border-t border-slate-200/30 dark:border-slate-800/30
+                              bg-slate-50/80 dark:bg-[#020617]/80 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16 md:mb-32">
+        <h2 class="text-xl font-semibold mb-2 tracking-tight">
+          Let's Get in Touch
+          <i class="fa-solid fa-handshake text-brand ml-2"></i>
+        </h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 font-normal mb-10">
+          Feel free to reach out — I'm always open to new opportunities &amp; collaborations.
+        </p>
+
+        <div class="mb-8">
+          <p class="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-3">Email me at:</p>
+          <a href="mailto:hazmihashim11@gmail.com?subject=Contact%20Form&body=Hi%20Hazmi%20Hashim,%0D%0AGood%20day!%0D%0A%0D%0A"
+              target="_blank" rel="noopener noreferrer"
+              class="email-link inline-flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 transition">
+              <span class="material-icons text-base">mail</span>
+              hazmihashim11@gmail.com
+          </a>
+        </div>
+
+        <div>
+          <p class="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-4">Or follow me on:</p>
+          <div class="flex flex-wrap justify-center gap-3.5 sm:gap-4">
+
+            <a href="https://www.facebook.com/hardzmy" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+              class="glass w-12 h-12 sm:w-14 sm:h-14 rounded-xl transition-all duration-300 shadow-sm grid place-items-center
+                hover:-translate-y-1 text-slate-600 dark:text-slate-300
+                hover:border-[#3b5998] hover:text-[#3b5998]
+                dark:hover:border-[#3b5998] dark:hover:text-[#3b5998]">
+              <i class="fa-brands fa-facebook-f text-base sm:text-lg"></i>
+            </a>
+
+            <a href="https://www.instagram.com/hardzmy" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+              class="glass w-12 h-12 sm:w-14 sm:h-14 rounded-xl transition-all duration-300 shadow-sm grid place-items-center
+                hover:-translate-y-1 text-slate-600 dark:text-slate-300
+                hover:border-[#e1306c] hover:text-[#e1306c]
+                dark:hover:border-[#e1306c] dark:hover:text-[#e1306c]">
+              <i class="fa-brands fa-instagram text-base sm:text-lg"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@hazmihashim" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+              class="glass w-12 h-12 sm:w-14 sm:h-14 rounded-xl transition-all duration-300 shadow-sm grid place-items-center
+                hover:-translate-y-1 text-slate-600 dark:text-slate-300
+                hover:border-[#FF0000] hover:text-[#FF0000]
+                dark:hover:border-[#FF0000] dark:hover:text-[#FF0000]">
+              <i class="fa-brands fa-youtube text-base sm:text-lg"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/hardzmy" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+              class="glass w-12 h-12 sm:w-14 sm:h-14 rounded-xl transition-all duration-300 shadow-sm grid place-items-center
+                hover:-translate-y-1 text-slate-600 dark:text-slate-300
+                hover:border-[#0077b5] hover:text-[#0077b5]
+                dark:hover:border-[#0077b5] dark:hover:text-[#0077b5]">
+              <i class="fa-brands fa-linkedin-in text-base sm:text-lg"></i>
+            </a>
+
+            <a href="https://github.com/hardzmy" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+              class="glass w-12 h-12 sm:w-14 sm:h-14 rounded-xl transition-all duration-300 shadow-sm grid place-items-center
+                hover:-translate-y-1 text-slate-600 dark:text-slate-300
+                hover:border-[#f39c12] hover:text-[#f39c12]
+                dark:hover:border-[#f39c12] dark:hover:text-[#f39c12]">
+              <i class="fa-brands fa-github text-base sm:text-lg"></i>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-6">
+
+        <div class="max-w-sm">
+          <span class="text-base font-semibold tracking-tight text-slate-900 dark:text-white">
+            HARDZMY<span class="text-brand">.</span>
+          </span>
+          <p class="mt-6 text-slate-500 dark:text-slate-400 leading-relaxed text-sm font-normal">
+            Specializing in information technology, web &amp; app solutions, back-end logic,
+            robot process automation, SRS documentation and more.
+          </p>
+        </div>
+
+        <div class="w-full md:w-auto flex flex-col items-end md:items-start text-right md:text-left">
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white mb-6 underline underline-offset-4">Navigation</h4>
+          <ul class="space-y-3 text-sm font-normal text-slate-600 dark:text-slate-400">
+            <li><a href="#persona"      class="hover:text-brand hover:-translate-x-1 md:hover:translate-x-1 inline-block transition">Profile</a></li>
+            <li><a href="#work"         class="hover:text-brand hover:-translate-x-1 md:hover:translate-x-1 inline-block transition">Experience</a></li>
+            <li><a href="#expertise"    class="hover:text-brand hover:-translate-x-1 md:hover:translate-x-1 inline-block transition">Technical Expertise</a></li>
+            <li><a href="#certificates" class="hover:text-brand hover:-translate-x-1 md:hover:translate-x-1 inline-block transition">Certificates</a></li>
+            <li><a href="#education"    class="hover:text-brand hover:-translate-x-1 md:hover:translate-x-1 inline-block transition">Education</a></li>
+            <li><a href="#galleria"     class="hover:text-brand hover:-translate-x-1 md:hover:translate-x-1 inline-block transition">Galleria</a></li>
+            <li><a href="#contact"      class="hover:text-brand hover:-translate-x-1 md:hover:translate-x-1 inline-block transition">Contact</a></li>
+          </ul>
+          <a href="#top" class="inline-flex items-center gap-1.5 mt-6 text-sm font-semibold text-brand hover:translate-x-1 transition">
+            <i class="fa-solid fa-arrow-up text-xs"></i>
+            <span>Back to Top</span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="pt-2 text-center">
+        <span class="text-sm text-slate-500 dark:text-slate-400 font-normal" id="currentYear"></span>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
